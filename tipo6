@@ -1,0 +1,44 @@
+class Fatura:
+    def __init__(self,numero,quantidade,preco):
+        self.numero=numero
+        self.quantidade=quantidade
+        self.preco=preco
+   
+    @property
+    def numero(self):
+        return(self.__numero)
+    @numero.setter
+    def numero(self,numero):
+        self.__numero=numero
+   
+    @property
+    def quantidade(self):
+        return(self.__quantidade)
+    @quantidade.setter
+    def quantidade(self,quantidade):
+        self.__quantidade=quantidade
+   
+    @property
+    def preco(self):
+        return(self.__preco)
+    @preco.setter
+    def preco(self,preco):
+        self.__preco=preco
+
+    @property
+    def total(self):
+        total = self.quantidade * self.preco
+        print("O total da fatura é: ",total)
+        return total
+
+def testar_fatura():
+    numero = int(input("Dê o número da fatura: "))
+    quantidade = int(input("Dê a quantidade de itens: "))        
+    preco = float(input("Dê o preço por item: "))
+    objeto = Fatura(numero,quantidade,preco)
+    print(objeto.total)
+    nova = int(input("Dê a nova quantia: "))
+    objeto.quantidade = nova
+    print(objeto.total)
+
+testar_fatura()
