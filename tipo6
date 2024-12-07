@@ -33,14 +33,15 @@ class Fatura:
         print("O total da fatura é: ",total)
         return total
 
-def testar_fatura():
-    numero = int(input("Dê o número da fatura: "))
-    quantidade = int(input("Dê a quantidade de itens: "))        
-    preco = float(input("Dê o preço por item: "))
-    objeto = Fatura(numero,quantidade,preco)
-    print(objeto.total)
-    nova = int(input("Dê a nova quantia: "))
-    objeto.quantidade = nova
-    print(objeto.total)
+class Testfatura:
+    def testar_fatura():
+        numero = int(input("Dê o número da fatura: "))
+        quantidade = int(input("Dê a quantidade de itens: "))        
+        preco = float(input("Dê o preço por item: "))
+        objeto = Fatura(numero,quantidade,preco)
+        print(objeto.total)
+        nova = int(input("Dê a nova quantia: "))
+        objeto.quantidade = nova
+        print(objeto.total)
 
-testar_fatura()
+Testfatura.testar_fatura()
